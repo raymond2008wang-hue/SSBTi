@@ -45,4 +45,20 @@ try:
     # --- 處理資料過濾邏輯 ---
     filtered_df = df.copy()
     
-    #
+    # 執行關鍵字過濾
+    if search_query:
+        mask = filtered_df.astype(str).apply(lambda x: x.str.contains(search_query, case=False, na=False)).any(axis=1)
+        filtered_df = filtered_df[mask]
+        
+    # 執行下拉選單過濾
+    if selected_column != "(不使用)" and len(selected_items) > 0:
+        filtered_df = filtered_df[filtered_df[selected_column].astype(str).isin(selected_items)]
+
+    # --- 主畫面：顯示結果 ---
+    st.subheader(f"📊 查詢結果 (共 {len(filtered_df)} 筆資料)")
+    st.dataframe(filtered_df, use_container_width=True)
+
+except FileNotFoundError:
+    st.error("⚠️ 找不到 `econinvent1.xlsx` 檔案，請確認檔案名稱是否正確。")
+except Exception as e:
+    st.error(f"⚠️ 發生錯誤：{e}")
