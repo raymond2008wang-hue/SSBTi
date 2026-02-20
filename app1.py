@@ -11,7 +11,7 @@ st.markdown("這是一個進階的資料查詢介面，您可以透過左側選�
 # 3. 讀取 Excel 檔案
 @st.cache_data
 def load_data():
-    df = pd.read_excel("ecoinvent1.xlsx")
+    df = pd.read_excel("econinvent1.xlsx")
     return df
 
 try:
