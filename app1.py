@@ -5,7 +5,7 @@ import pandas as pd
 st.set_page_config(page_title="碳足跡資料庫搜尋系統", layout="wide")
 
 # 2. 網頁主標題
-st.title("🌱 SSBTi.org - Ecoinvent 資料庫建模查詢系統 - by Nanozeo.com")
+st.title("🌱 SSBTi.org-Ecoinvent3.9.1 足跡數據搜尋系統-by Nanozeo.com")
 st.markdown("這是一個進階的資料查詢介面，您可以透過左側選單進行多重搜尋與精確篩選。")
 
 # 3. 讀取 Excel 檔案
