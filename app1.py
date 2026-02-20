@@ -5,7 +5,7 @@ import pandas as pd
 st.set_page_config(page_title="碳足跡資料庫搜尋系統", layout="wide")
 
 # 2. 網頁主標題
-st.title("🌱 台灣磁原科技 - Ecoinvent 資料庫查詢系統")
+st.title("🌱 SSBTi.org - Ecoinvent 資料庫建模查詢系統 - by Nanozeo.com")
 st.markdown("這是一個進階的資料查詢介面，您可以透過左側選單進行多重搜尋與精確篩選。")
 
 # 3. 讀取 Excel 檔案
@@ -68,7 +68,7 @@ try:
     display_df = filtered_df[final_column_order]
 
     # --- 主畫面：顯示結果 ---
-    st.subheader(f"📊 查詢結果 (共 {len(display_df)} 筆資料)")
+    st.subheader(f"📊 查詢結果 (共 {len(display_df)} 筆資料) * 資料較多，你可以用游標移動資料欄位查看；可以截屏提交顧問取得最新足跡報告")
     st.dataframe(display_df, use_container_width=True)
 
 except FileNotFoundError:
